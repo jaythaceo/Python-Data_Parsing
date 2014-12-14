@@ -1,0 +1,61 @@
+<DOCTYPR html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA Compatible" content="IE-edge">
+<meta name="viewport" content="width-device-width, initial-scale=1">
+<meta name="descriptiion" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>Landing Page</title>
+
+<!-- bootstrap core -->
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- custom styles for this template -->
+<link href="/static/jumbotron.css" rel="stylesheet">
+
+<!-- custom css -->
+<link href="/static/custom.css" rel="stylesheet">
+
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% block jumbotron %}
+
+    {% endblock %}
+
+    <!-- For successful sign up -->
+    <div class="container">
+        {% if messages %}
+        <div class="row">
+            <div class="col-sm-6 col-small-offset-4">
+
+                {% for message in messages %}
+                <p {% if message.tags == "success" %} class="alert alert-success"{% endif %}>{{ message }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+    <div class="row">
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; Jaythaceo.com 2014</p>
+        </footer>
+        </div>
+
+        <!-- boostrap core Javascript -->
+        <script src="/static/js/jquery.min.js></script>
+        <script src="/static/js/bootstrap.min.js></script>
+
+</body>
